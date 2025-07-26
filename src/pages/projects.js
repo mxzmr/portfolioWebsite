@@ -135,48 +135,45 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
             {title}
           </h2>
         </Link>
-        <p className=" my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
+        <p className="my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
           {summary}
         </p>
         <div className="mt-2 flex items-center">
-          <Link
-            href={github}
-            target={"_blank"}
-            className="w-10"
-            aria-label="github link"
-          >
-            <GithubIcon />
-          </Link>
-          <Link
-            href={link}
-            className="ml-4 rounded-lg
+          {github && (
+            <Link href={github} target={"_blank"} className="w-10 text-3xl">
+              <GithubIcon />
+            </Link>
+          )}
+          {link && (
+            <Link
+              href={link}
+              className={`${github ? 'ml-4' : ''} rounded-lg
              bg-dark p-2 px-6 text-lg font-semibold
              sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
-            md:p-2 md:px-4 md:text-base"
-            aria-label="Project link"
-          >
-            View Project
-          </Link>
+            md:p-2 md:px-4 md:text-base`}
+            >
+              Visit Project
+            </Link>
+          )}
         </div>
       </div>
     </article>
   );
 };
 
-const Project = ({ title, type, img, link, tools }) => {
+const Project = ({ title, type, img, link, github, tools, summary = "" }) => {
   return (
     <article
-      className="relative flex w-full flex-col items-center justify-center rounded-2xl  rounded-br-2xl 
-      border  border-solid  border-dark bg-light p-6  shadow-2xl dark:border-light dark:bg-dark 
-      xs:p-4
-      "
+      className="relative flex h-full w-full flex-col items-center justify-between self-stretch rounded-2xl 
+border border-solid border-dark bg-light p-6 shadow-2xl dark:border-light dark:bg-dark 
+xs:p-4"
     >
       <div
-        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%] rounded-[2rem] rounded-br-3xl bg-dark
-         dark:bg-light  md:-right-2 md:w-[101%] xs:h-[102%]
-        xs:rounded-[1.5rem]"
+        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2rem] rounded-br-3xl
+         bg-dark dark:bg-light md:-right-2 md:w-[101%] xs:h-[102%]
+        xs:rounded-[1.5rem] "
       />
 
       <Link
@@ -185,8 +182,8 @@ const Project = ({ title, type, img, link, tools }) => {
       >
         <FramerImage
           src={img}
-          alt={title}
           className="h-auto w-full"
+          alt={title}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
           sizes="(max-width: 768px) 100vw,
@@ -194,34 +191,48 @@ const Project = ({ title, type, img, link, tools }) => {
               33vw"
         />
       </Link>
-      <div className="mt-4 flex w-full flex-col items-start justify-between">
-        <span className="text-xl font-medium text-primary dark:text-light lg:text-lg md:text-base">
+
+      <div className="flex w-full flex-col items-start justify-start pt-4">
+        <span className="text-xl font-medium text-primary dark:text-light xs:text-base">
           {type}
         </span>
         <span className="text-xl font-medium text-primaryDark dark:text-primaryDark xs:text-base">
           {tools}
         </span>
-
         <Link href={link} className="underline-offset-2 hover:underline">
           <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl ">
             {title}
           </h2>
         </Link>
-        <div className="flex w-full items-center  justify-between">
+        <p className="my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
+          {summary}
+        </p>
+      </div>
+      <div className="mt-auto flex items-center self-start">
+        {github && (
+          <Link
+            href={github}
+            target={"_blank"}
+            className="w-10"
+            aria-label="github link"
+          >
+            <GithubIcon />
+          </Link>
+        )}
+        {link && (
           <Link
             href={link}
-            className="rounded-lg
-             bg-dark mt-2 px-6 py-2 text-lg font-semibold
+            className={`${github ? 'ml-4' : ''} rounded-lg
+             bg-dark p-2 px-6 text-lg font-semibold
              sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
-            md:p-2 md:px-4 md:text-base
-            "
-            aria-label={title}
+            md:p-2 md:px-4 md:text-base`}
+            aria-label="Project link"
           >
             View Project
           </Link>
-        </div>
+        )}
       </div>
     </article>
   );
@@ -247,39 +258,36 @@ export default function Projects() {
             text="Imagination Transforms the World ✨"
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
           />
-          <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
+          <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0 auto-rows-fr">
             <div className="col-span-12">
               <FeaturedProject
-                type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
-                summary="Image-centric Gatsby theme for publishers, portfolio, photographers blogs and more."
+                type="Tech Stack"
+                tools="Swift | SwiftUI | MVVM | Firebase | REST API | JSON | GIT"
+                title="Sporty - Fitness & Nutrition Tracking"
+                summary="A feature-rich iOS app designed to support comprehensive health goals, incorporating custom and template-based workouts, detailed nutrition tracking, and progress visualization. Developed using SwiftUI and MVVM, the app integrates Firebase Authentication, Firestore, Crashlytics and Analytics. It also utilizes REST APIs for dynamic data retrieval and integration."
                 img={proj1}
-                date="2023"
-                link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
+                date="2025"
+                link="/projects/sporty"
               />
             </div>
-            <div className="col-span-6 sm:col-span-12">
+            <div className="col-span-6 flex flex-col md:col-span-6 sm:col-span-12">
               <Project
-                type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
+                type="Tech Stack"
+                tools="Swift | SwiftUI | TCA | Firebase | Core Data | REST API | JSON | GIT"
+                title="ShowTime"
+                summary="Explore the latest in entertainment with our movie and TV show app. This app offers a seamless browsing experience across various categories, advanced search options, and the ability to bookmark favorites and stay on top of trends. Developed using SwiftUI, TCA and Core Data, the app also integrates Firebase Crashlytics and Analytics.  Additionally, it utilizes REST APIs to fetch the latest content updates."
                 img={proj1}
-                date="2023"
                 link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
               />
             </div>
-            <div className="col-span-6 sm:col-span-12">
+            <div className="col-span-6 flex flex-col md:col-span-6 sm:col-span-12">
               <Project
-                type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
+                type="Tech Stack"
+                tools="Swift | UIKit | SwiftUI | MVVM | Core Data | REST API | JSON | GIT"
+                title="MyFocusJourney"
+                summary="Maximize your productivity and focus with MyFocusJourney!  Whether you're tackling tasks with the Pomodoro technique or prefer an open-ended session, MyFocusJourney is your ultimate tool for staying on track and achieving your goals."
                 img={proj1}
-                date="2023"
                 link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
               />
             </div>
           </div>
