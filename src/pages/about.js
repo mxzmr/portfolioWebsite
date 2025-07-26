@@ -64,27 +64,22 @@ export default function About() {
                 BIOGRAPHY
               </h2>
               <p className="font-medium ">
-                I'm Riley, a dedicated web developer at Stellar Innovations,
-                where I specialize in creating dynamic and user-centric web
-                experiences. With over a decade of experience in the industry, I
-                have honed my skills in both front-end and back-end
-                technologies, allowing me to deliver responsive and
-                high-performance websites and applications.
+              I'm Max, a Mobile Developer at BeFree Agro, and I'm genuinely passionate about bringing innovative and intuitive applications to life on mobile devices.
+              With over 2 years of experience in mobile development,
+              I've honed my skills in crafting responsive and high-performance apps that deliver user-centric experiences.
+              I absolutely love diving into the whole process, from that initial idea to seeing a finished app in users' hands.
               </p>
               <p className="my-4 font-medium">
-                At Stellar Innovations, I've had the opportunity to work on
-                numerous high-profile projects that have challenged and expanded
-                my expertise. My technical skill set includes HTML, CSS,
-                JavaScript, React, and Node.js, among other technologies. One of
-                my notable projects involved developing a comprehensive
-                e-commerce platform that streamlined the user experience and
-                significantly boosted the client's sales. Another project I’m
-                particularly proud of was creating an interactive web
-                application for a major event, which received widespread acclaim
-                for its intuitive design and seamless performance.
+              At BeFree Agro, I contribute to both mobile and cloud solutions.
+              This includes maintaining and extending an Android app for drone management and control, as well as building a new cloud-based Drone Software and Management Platform.
+ 
+              I'm also developing an app for tracking and planning truck routes for agricultural operations.
+              This hands-on experience has deepened my expertise in Android development, leveraging modern frameworks like Jetpack Compose and embracing solid architectural patterns.
+              I'm also actively exploring the potential of Kotlin Multiplatform (KMP) and Compose Multiplatform (CMP), always keen to discover efficient ways to create seamless experiences across platforms.
               </p>
               <p className="my-4 font-medium">
-                P.s I'm a big fan of anime and not a real person ✌️.
+               always keen to discover efficient ways to create seamless experiences across platforms.
+              I'm a firm believer in continuous learning and always eager to connect with fellow mobile enthusiasts to explore what's next in tech. Let's build something great together!
               </p>
             </div>
             <div
@@ -114,7 +109,7 @@ export default function About() {
             >
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={1461} />+
+                  <AnimatedNumberFramerMotion value={1067} />+
                 </span>
                 <h3
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
@@ -126,7 +121,7 @@ export default function About() {
 
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={500} />
+                  <AnimatedNumberFramerMotion value={400} />
                 </span>
                 <h3
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
@@ -138,7 +133,7 @@ export default function About() {
 
               <div className="flex flex-col items-end justify-center xl:items-center">
                 <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
-                  <AnimatedNumberFramerMotion value={499} />
+                  <AnimatedNumberFramerMotion value={399} />
                 </span>
                 <h3
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 

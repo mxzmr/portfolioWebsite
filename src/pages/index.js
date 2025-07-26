@@ -39,20 +39,19 @@ export default function Home() {
             </div>
             <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
               <AnimatedText
-                text="Hey, I’m Riley"
+                text="Hey, I’m Max"
                 className="!text-left !text-6xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               />
               <div className="flex w-1/2 w-full items-center items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
                 <h2 className="animate-text bg-gradient-to-r from-lightGreen via-lightGreen to-slideGreen bg-clip-text text-transparent font-semibold capitalize !text-5xl xl:!text-4xl lg:!text-4xl md:!text-5xl sm:!text-3xl">
-                  I create engaging web experiences.
+                  I create engaging mobile experiences.
                 </h2>
               </div>
 
               <p className="my-4 text-base font-medium md:text-sm sm:!text-sm">
-                I'm a front-end web developer at Stellar Innovations, passionate
-                about creating dynamic and user-friendly web experiences. With a
-                keen eye for design and a robust understanding of front-end and
-                back-end technologies.
+              I'm a Mobile Developer, passionate about crafting robust and user-friendly applications for both iOS and Android.
+              With a keen eye for design and a robust understanding of the full development lifecycle, from initial idea to deployment,
+              I've successfully published three iOS applications to the App Store, and I'm always looking to create the next great user experience.
               </p>
               <div className="mt-2 flex items-center self-start gap-3 grid-cols-2 lg:self-center">
                 <Link
