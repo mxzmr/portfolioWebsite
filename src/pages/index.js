@@ -88,8 +88,8 @@ export default function Home() {
             width="280"
             height="120"
             src="https://seasonal-au.netlify.app/"
-            frameborder="0"
-            allowfullscreen
+            frameBorder="0"
+            allowFullScreen
           ></iframe>
         </div>
         <HireMe />
