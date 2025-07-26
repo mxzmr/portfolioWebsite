@@ -3,7 +3,7 @@ import { motion, useScroll } from "framer-motion";
 import LiIcon from "./LiIcon";
 import Link from "next/link";
 
-const Details = ({ position, company, companyLink, time, address, work }) => {
+const Details = ({ position, company, time, address, work }) => {
   const ref = useRef(null);
   return (
     <li
@@ -17,19 +17,17 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         transition={{ duration: 0.5, type: "spring" }}
       >
         <h3 className="capitalize font-bold text-2xl sm:text-xl xs:text-lg">
-          {position}{" "}
-          <a
-            className="capitalize text-slideGreen dark:text-primaryDark"
-            href={companyLink}
-            target={"_blank"}
-          >
+          {position}{' '}
+          <span className="text-slideGreen dark:text-primaryDark">
             @{company}
-          </a>
+          </span>
         </h3>
-        <span className="capitalize text-dark/75 font-medium dark:text-light/50 xs:text-sm">
+        <span className="capitalize text-dark/75 font-medium dark:text-light/50 xs:text-sm mb-2">
           {time} | {address}
         </span>
-        <p className="font-medium w-full md:text-sm"> {work}</p>
+        <div className="font-medium w-full md:text-sm">
+          {work}
+        </div>
       </motion.div>
     </li>
   );
@@ -40,7 +38,7 @@ const Experience = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center start"],
+    offset: ["start end", "center center"],
   });
 
   return (
@@ -59,20 +57,51 @@ const Experience = () => {
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
           <Details
             position="Developer"
-            company="Stellar Innovations"
-            time="2020 - 2024"
-            address="200 Innovations st"
-            companyLink="https://github.com/lilxyzz/clay-theme"
-            work="At Stellar Innovations, I serve as a web developer, where I play a crucial role in designing and implementing cutting-edge web solutions. My responsibilities include developing responsive and high-performance websites and applications using technologies such as HTML, CSS, JavaScript, React, and Node.js. I collaborate closely with cross-functional teams to ensure our projects meet the highest standards of functionality and user experience. One of my key achievements at Stellar Innovations has been leading the development of a comprehensive e-commerce platform that significantly enhanced our client's online presence and sales. My work is driven by a passion for continuous learning and innovation, always striving to push the boundaries of what's possible in web development."
+            company="Agro Tech"
+            time="2025 - Present"
+            address="somewhere"
+            work={
+              <ul className="list-disc pl-5 space-y-2 mt-2">
+                <li>Contribute to the development and maintenance of critical mobile and cloud solutions, playing a key role in delivering advanced tools for agricultural operations</li>
+                <li>
+                  <span className="font-medium">Android App Development (Drone Management):</span> Maintained and significantly extended a core Android application for drone management and control, encompassing functionalities from route planning to flight configurations and real-time operational oversight
+                </li>
+                <li>
+                  <span className="font-medium">Cloud Platform Development:</span> Actively building a new cloud-based Drone Software and Management Platform, contributing to its architecture and implementation to support scalable and robust drone operations data
+                </li>
+                <li>
+                  <span className="font-medium">Logistics Application:</span> Developed a dedicated mobile application for tracking and planning truck routes and schedules for essential agricultural activities, such as animal feeding, optimizing operational efficiency
+                </li>
+              </ul>
+            }
           />
 
           <Details
-            position="Rad Tester"
-            company="Vault Technologies"
-            time="2018 - 2020"
-            address="404 Tech st"
-            companyLink="https://github.com/lilxyzz/holo-theme"
-            work="At Vault Technologies, I worked as a RAD (Rapid Application Development) Tester, where I was responsible for ensuring the quality and functionality of our software applications during the development process. My role involved designing and executing test plans, identifying and documenting bugs, and working closely with developers to resolve issues quickly. This position required a deep understanding of the software development lifecycle and a keen eye for detail to ensure our applications met the highest standards of performance and reliability. My contributions at Vault Technologies helped streamline our development processes and significantly improved the overall quality of our software products."
+            position="IT Specialist"
+            company="A.G.E Electronics"
+            time="2020 - 2024"
+            address="Somewhere"
+            work={
+              <ul className="list-disc pl-5 space-y-2 mt-2">
+                <li>Served as an IT Specialist responsible for maintaining and troubleshooting computer systems and networks</li>
+                <li>Ensured smooth operation of IT infrastructure, including servers, printers, and other hardware devices</li>
+                <li>Collaborated with cross-functional teams to resolve technical issues and enhance system performance</li>
+                <li>Contributed to maintaining the reliability and efficiency of IT systems, boosting organizational productivity</li>
+              </ul>
+            }
+          />
+          <Details
+            position="Webmaster"
+            company="La Vida Chic"
+            time="2016 - 2024"
+            address="Somewhere"
+            work={
+              <ul className="list-disc pl-5 space-y-2 mt-2">
+                <li>Developed and maintained an e-commerce website.</li>
+                <li>Implemented and optimized SEO strategies to improve search engine rankings and drive traffic to the website.</li>
+                <li>Analyzed website traffic and user behavior data to identify areas for improvement and to optimize website performance.</li>
+              </ul>
+            }
           />
         </ul>
       </div>
